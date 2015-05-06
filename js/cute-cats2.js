@@ -29,10 +29,11 @@
     count: 0
   }
   ]
-  }
+  };
 
   var octopus = {
     init: function() {
+      catListView.init();
       catView.init();
     },
     getCats: function() {
@@ -56,17 +57,18 @@
     incrementCount: function(currentCat) {
       model.cats[currentCat].count++;
     }
-  }
+  };
 
   var catView = {
     init: function() {
       var currentCat = octopus.getCurrentCat();
-      catView.display(currentCat);
+      this.display(currentCat);
+      var that = this;   // this (i.e. catView) gets rebound inside the click handler
 
       // Display the selected cat
       $('li').click(function() {
         currentCat = $(this).attr('data-item');
-        catView.display(currentCat);
+        that.display(currentCat);
       });
 
       // Update the click count
@@ -89,7 +91,27 @@
       $('#cat-name').text(catName);
       $('img').attr({"src" : catUrl, "alt" : catName});
     }
-  }
+  };
+
+  var catListView = {
+    init: function() {
+      this.catListElem = $('#cat-list');
+
+      this.render();
+    },
+    render: function() {
+      var catName;
+      var cats = octopus.getCats();
+
+      // initialise the list
+      this.catListElem.innerHTML = '';
+
+      for (var i = 0; i < cats.length; i++) {
+        catName = octopus.getCatName(i);
+        this.catListElem.append("<li data-item='"+i+"''>"+catName+"</li>");
+      }
+    }
+  };
 
   octopus.init();
 
