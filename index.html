@@ -10,9 +10,19 @@
     <ul id="cat-list"></ul>
   </div>
   <div id="cute-cat">
-    <span id="click-count">0</span>
-    <div id="cat-name"></div>
-    <img src="" alt="">
+    <div id="cute-wrapper">
+      <span id="click-count">0</span>
+      <div id="cat-name"></div>
+      <img src="" alt="">
+    </div>
+      <button id="admin-btn" type="">Admin</button>
+      <form id="catForm">
+        Name:<input id="catName" type="text" placeholder="Cat Name"><br>
+        URL:<input id="catUrl" type="text" placeholder="Cat URL"><br>
+        Clicks:<input id="catClicks" type="text" placeholder="Number of Clicks"><br>
+        <button type="button">Cancel</button>
+        <button type="submit">Submit</button>
+      </form>
   </div>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>

@@ -24,3 +24,12 @@ body {
   font-size: 24px;
   margin-bottom: 0.3em;
 }
+form {
+  margin: 10px 0;
+}
+form button {
+  margin-top: 5px;
+}
+form input {
+  margin: 4px 0;
+}
