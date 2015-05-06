@@ -1,0 +1,15 @@
+{
+  "name": "DesignPatterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Iain Diamond",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^2.1.4"
+  }
+}

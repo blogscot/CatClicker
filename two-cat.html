@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cat Clicker</title>
+  <style>
+  .click-count {
+    background-color: white;
+    color: blue;
+    position: relative;
+    left: 12em;
+    top: 2.8em;
+    padding: 0.3em;
+    border-radius: 1em;
+    font-size: 2em;
+  }
+  .cats img {
+    width: 400px;
+    height: 300px;
+  }
+  .cat-name {
+    font-size: 24px;
+  }
+  </style>
+</head>
+<body>
+  <div class="cats" id="cute-cat">
+    <span class="click-count">0</span>
+    <div class="cat-name"></div>
+    <img src="images/kitten.jpg" alt="Cute Kitten">
+  </div>
+  <div class="cats" id="sneaky-cat">
+    <span class="click-count">0</span>
+    <div class="cat-name"></div>
+    <img src="images/sneaky-cat.jpg" alt="Sneaky Cat">
+  </div>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+  $('document').ready(function() {
+    var counter1 = 0;
+    var counter2 = 0;
+    $('#cute-cat .cat-name').text('Cute Kitten');
+    $('#sneaky-cat .cat-name').text('Sneaky Cat');
+
+    $('#cute-cat img').click(function() {
+      counter1++;
+      $(this).siblings().first().text(counter1);
+    });
+    $('#sneaky-cat img').click(function() {
+      counter2++;
+      $(this).siblings().first().text(counter2);
+    });
+  });
+</script>
+</body>
+</html>

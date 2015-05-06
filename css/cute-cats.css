@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  justify-content: space-around;
+}
+#click-count {
+  background-color: white;
+  color: blue;
+  position: relative;
+  left: 12.5em;
+  top: 3em;
+  padding: 0.3em;
+  border-radius: 1em;
+  font-size: 2em;
+}
+#cute-cat img {
+  width: 400px;
+  height: 300px;
+}
+#cat-name {
+  font-size: 24px;
+  margin-bottom: 0.3em;
+}
