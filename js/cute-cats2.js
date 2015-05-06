@@ -58,28 +58,15 @@
     }
   }
 
-  function displayCat(currentCat) {
-    var catName = octopus.getCatName(currentCat);
-    var catUrl = octopus.getCatUrl(currentCat);
-    var catCount = octopus.getCatCount(currentCat);
-      
-    // save current cat
-    octopus.setCurrentCat(currentCat);
-
-    $('#click-count').text(catCount);
-    $('#cat-name').text(catName);
-    $('img').attr({"src" : catUrl, "alt" : catName});
-  }
-
   var catView = {
     init: function() {
       var currentCat = octopus.getCurrentCat();
-      displayCat(currentCat);
+      catView.display(currentCat);
 
       // Display the selected cat
       $('li').click(function() {
         currentCat = $(this).attr('data-item');
-        displayCat(currentCat);
+        catView.display(currentCat);
       });
 
       // Update the click count
@@ -89,6 +76,18 @@
         octopus.incrementCount(currentCat);
         $('#click-count').text(octopus.getCatCount(currentCat));
       });
+    },
+    display: function(currentCat) {
+      var catName = octopus.getCatName(currentCat);
+      var catUrl = octopus.getCatUrl(currentCat);
+      var catCount = octopus.getCatCount(currentCat);
+        
+      // save current cat
+      octopus.setCurrentCat(currentCat);
+
+      $('#click-count').text(catCount);
+      $('#cat-name').text(catName);
+      $('img').attr({"src" : catUrl, "alt" : catName});
     }
   }
 
