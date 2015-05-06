@@ -3,6 +3,11 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+ul {
+  li {
+    font-size: 1.4em;
+  }
+}
 #click-count {
   background-color: white;
   color: blue;
@@ -15,10 +20,11 @@ body {
 }
 #cute-cat {
   order: 1;   /* tweak this to change the display order*/
-}
-#cute-cat img {
-  width: 400px;
-  height: 300px;
+  
+  img {
+    width: 400px;
+    height: 300px;
+  }
 }
 #cat-name {
   font-size: 24px;
@@ -26,10 +32,10 @@ body {
 }
 form {
   margin: 10px 0;
-}
-form button {
-  margin-top: 5px;
-}
-form input {
-  margin: 4px 0;
+  button {
+    margin-top: 5px;
+  }
+  input {
+    margin: 4px 0;
+  }
 }
