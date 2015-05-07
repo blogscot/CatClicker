@@ -44,6 +44,7 @@ gulp.task('watchFiles', function() {
 });
 
 gulp.task('clean', function() {
+  del(['build/js/*']);
   del(['build/css/*']);
   del('build/*.html');
 });
